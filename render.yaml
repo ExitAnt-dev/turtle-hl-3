@@ -1,0 +1,16 @@
+services:
+  - type: worker
+    name: exitant-turtle-hl
+    runtime: image
+    plan: starter
+    region: oregon
+    numInstances: 1
+    image:
+      url: docker.io/exitant/exitant-turtle-hl:3
+    envVars:
+      - key: HYPE_WALLET_API
+        sync: false
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false
